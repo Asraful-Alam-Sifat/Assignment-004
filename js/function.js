@@ -27,11 +27,22 @@ function Counter(){
 Counter();
 
 function noJobsMessage(id){
-    if(allCardSection.childElementCount === 0){
-        document.getElementById(id).classList.remove('hidden');
-    } else {
-        document.getElementById(id).classList.add('hidden');
-    }
+    // if(allCardSection.childElementCount === 0){
+    //     document.getElementById(id).classList.remove('hidden');
+    // } else {
+    //     document.getElementById(id).classList.add('hidden');
+    // }
+     const containers = [allCardSection, interviewContainer, rejectedContainer];
+     for(let container of containers){
+        if(container.childElementCount === 0){
+            // document.getElementById(id).classList.remove('hidden');
+            const noJobsElement = document.getElementById(id);
+            container.appendChild(noJobsElement);
+            noJobsElement.classList.remove('hidden');
+        }else{
+            document.getElementById(id).classList.add('hidden');
+        }
+     }
 }
 
 noJobsMessage('no-jobs');
