@@ -42,12 +42,65 @@ function toggleStyle(id){
         if(id === 'interview-applications'){
             allCardSection.classList.add('hidden');
             interviewContainer.classList.remove('hidden');
-            // rejectedContainer.classList.add('hidden');
+            rejectedContainer.classList.add('hidden');
         }else if(id === 'all-applications'){
             allCardSection.classList.remove('hidden');
             interviewContainer.classList.add('hidden');
+            rejectedContainer.classList.add('hidden');
+        }else if(id === 'rejected-applications'){
+            allCardSection.classList.add('hidden');
+            interviewContainer.classList.add('hidden');
+            rejectedContainer.classList.remove('hidden');
         }
 
 }
 
 
+ mainContainer.addEventListener('click', function(event) {
+
+      if(event.target.classList.contains('interview-btn')){
+        const parentCard = event.target.parentNode.parentNode;
+          const jobTitle = parentCard.querySelector('.job-title').innerText;
+
+          const jobExist = interviewList.find(item=> item.querySelector('.job-title').innerText === jobTitle)
+
+const statusBadge = parentCard.querySelectorAll('.status-badge');
+    for(let badge of statusBadge){
+        badge.innerText = 'INTERVIEW';
+        badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)');
+        badge.classList.add('border-2', 'border-green-500', 'bg-green-200', 'font-bold', 'text-center', 'text-green-600');
+    }
+
+              if(!jobExist){
+                const cloneApplication = parentCard.cloneNode(true);
+                interviewList.push(cloneApplication);
+              
+              }
+          Counter();
+
+          renderInterview();
+    }
+
+
+  })
+
+
+  function renderInterview(){
+    interviewContainer.innerHTML = '';
+
+    for(let interview of interviewList){
+     
+        interviewContainer.appendChild(interview);
+    }
+  }
+
+
+ function renderRejected(){
+    rejectedContainer.innerHTML = '';
+
+    for(let rejected of rejectedList){
+     
+        rejectedContainer.appendChild(rejected);
+    }
+  }
+    
