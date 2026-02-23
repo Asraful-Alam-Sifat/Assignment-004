@@ -53,7 +53,7 @@
     <main class=" max-w-6xl mx-auto p-3">
 
         <!-- NO Jobs -->
-         <section id="no-jobs" class=" h-[400px] mt-10 flex flex-col justify-center items-center gap-4 bg-base-100 rounded-lg border-2 border-gray-100 ">
+     <section id="no-jobs" class=" h-[400px] mt-10 flex flex-col justify-center items-center gap-4 bg-base-100 rounded-lg border-2 border-gray-100 hidden ">
             <img class="max-w-32" src="img/docs.png" alt="document-png">
             <h1 class="font-semibold text-2xl text-(--primary-text-color)">No jobs available</h1>
             <p class="font-medium text-base text-(--secondary-text-color)">Check back soon for new job opportunities</p>
@@ -75,9 +75,9 @@
                 <button onclick="toggleStyle('rejected-applications')" id="rejected-applications" class="btn btn-sm btn-outline btn-primary bg-base-100 text-(--secondary-text-color) border-2 border-gray-200 rounded-md px-7 py-4 font-semibold text-xs mr-3">Rejected</button>
         </div>
             </div>
-
+            <!-- All Applications -->
             <div id="all-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+               <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                       <div>
                        <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">Mobile First Corp</h4>
@@ -97,9 +97,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                </div>
             
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                  <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">WebFlow Agency</h4>
@@ -115,9 +115,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base ">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base ">Rejected</button>
                 </div>
-            </div>
+                    </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                  <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                  <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">DataViz Solutions</h4>
@@ -133,9 +133,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                   </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                  <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">CloudFirst Inc</h4>
@@ -151,9 +151,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                 </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                    <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">Innovation Labs</h4>
@@ -169,9 +169,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                 </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                    <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">MegaCorp Solutions</h4>
@@ -187,9 +187,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                  </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">StartupXYZ</h4>
@@ -205,9 +205,9 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
-            </div>
+                  </div>
 
-            <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
+                 <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
                 <div class="flex justify-between items-center relative" >
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">TechCorp Industries</h4>
@@ -223,28 +223,30 @@
                     <button class="interview-btn btn border-green-600 border-2 text-green-700 font-bold text-base">Interview</button>
                     <button class="rejected-btn btn border-red-600 border-2 text-red-700 font-bold text-base">Rejected</button>
                 </div>
+                  </div>
             </div>
-            </div>
 
-        </section> 
+         <!-- Interview Section -->
+             <section id="interview-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6 hidden">
 
-        <!-- Interview Section -->
-         <section id="interview-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
-          
-
-         </section>
+             </section>
 
 
             <!-- Rejected Section -->
             <section id="rejected-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
                
             </section>
+
+
+    </section> 
+
+    
+
     </main>
 
 
-    <script src="js/functions.js"></script>
-    <script src="js/interview.js"></script>
-    <script src="js/rejected.js"></script>
+
+    <script src="js/function.js"></script>
     
 </body>
 </html>
