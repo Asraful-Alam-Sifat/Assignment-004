@@ -24,11 +24,11 @@
         :root{
             --primary-text-color:#002C5C;
             --secondary-text-color:#64748b;
-        }
+        }   
     </style>
 </head>
 <body class="bg-base-200 pt-16">
-    <header class=" max-w-6xl mx-auto">
+    <header class=" max-w-6xl mx-auto p-3">
         <h1 class="font-extrabold text-4xl text-(--primary-text-color)">Job Application Tracker</h1>
         <section class="status-container grid grid-cols-3 gap-3 my-5">
             <div class="job-card bg-base-100 rounded-xl p-5 border-2 border-gray-100">
@@ -50,7 +50,7 @@
 
 <hr class="text-[#e6e7e9FF] my-8">
 
-    <main class=" max-w-6xl mx-auto">
+    <main class=" max-w-6xl mx-auto p-3">
 
         <!-- NO Jobs -->
          <section id="no-jobs" class=" h-[400px] mt-10 flex flex-col justify-center items-center gap-4 bg-base-100 rounded-lg border-2 border-gray-100 ">
@@ -76,14 +76,14 @@
         </div>
             </div>
 
-            <div id="all-container">
+            <div id="all-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                       <div>
                        <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">Mobile First Corp</h4>
                        <p class="font-normal text-base text-(--secondary-text-color)">ext-React Native Developer</p>
                      </div>
-                      <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
+                      <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Remote • Full-time • $130,000 - $175,000</p>
@@ -100,12 +100,12 @@
             </div>
             
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">WebFlow Agency</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">Web Designer & Developer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
@@ -118,12 +118,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                  <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">DataViz Solutions</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">Data Visualization Specialist</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>  
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>  
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Boston, MA • Full-time • $125,000 - $165,000</p>
@@ -136,12 +136,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                  <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">CloudFirst Inc</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">Backend Developer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                    
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                    
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Seattle, WA • Full-time • $140,000 - $190,000</p>
@@ -154,12 +154,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">Innovation Labs</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">UI/UX Engineer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                    
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                    
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Austin, TX • Full-time • $110,000 - $150,000</p>
@@ -172,12 +172,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                    <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">MegaCorp Solutions</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">JavaScript Developer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>  
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>  
                 </div>
                
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">New York, NY • Full-time • $130,000 - $170,000</p>
@@ -190,12 +190,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center relative">
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">StartupXYZ</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">Full Stack Engineer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>
                 </div>
                  
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">Remote • Full-time • $120,000 - $160,000</p>
@@ -208,12 +208,12 @@
             </div>
 
             <div class="applications-card bg-base-100 rounded-lg mb-4 p-6 border-2 border-gray-100">
-                <div class="flex justify-between items-center" >
+                <div class="flex justify-between items-center relative" >
                 <div>
                     <h4 class="job-title font-semibold text-lg mb-1 text-(--primary-text-color)">TechCorp Industries</h4>
                     <p class="font-normal text-base text-(--secondary-text-color)">Senior Frontend Developer</p>
                 </div>
-                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                    
+                <div class="delet-icon p-1.5 border-2 border-gray-100 rounded-full absolute top-0 right-0 lg:top-0 lg:right-0"><i class="fa-solid fa-trash-can text-gray-500"></i></div>                 
                 </div>
 
                 <p class="my-5 font-normal text-sm text-(--secondary-text-color)">San Francisco, CA • Full-time • $130,000 - $175,000</p>
@@ -229,14 +229,14 @@
         </section> 
 
         <!-- Interview Section -->
-         <section id="interview-container">
+         <section id="interview-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
           
 
          </section>
 
 
             <!-- Rejected Section -->
-            <section id="rejected-container">
+            <section id="rejected-container" class="grid grid-cols-2 lg:grid-cols-1 gap-6">
                
             </section>
     </main>
