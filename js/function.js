@@ -1,5 +1,6 @@
 let interviewList =[];
 let rejectedList = [];
+let jobStatus = 'applid';
 
 let totalCount = document.getElementById('total-count');
 let interviewCount = document.getElementById('interview-count');
@@ -14,6 +15,8 @@ const mainContainer = document.getElementById('all-jobs-container');
 const interviewContainer = document.getElementById('interview-container');
 const rejectedContainer = document.getElementById('rejected-container');
 
+const availableJobs = document.getElementById('available-jobs-count');
+availableJobs.innerText = allCardSection.childElementCount;
 
 
 function Counter(){
@@ -23,6 +26,15 @@ function Counter(){
 }
 Counter();
 
+function noJobsMessage(id){
+    if(allCardSection.childElementCount === 0){
+        document.getElementById(id).classList.remove('hidden');
+    } else {
+        document.getElementById(id).classList.add('hidden');
+    }
+}
+
+noJobsMessage('no-jobs');
 
 function toggleStyle(id){
         const btns = ['all-applications', 'interview-applications', 'rejected-applications'];
@@ -38,6 +50,7 @@ function toggleStyle(id){
             }
         }
 
+jobStatus = id;
 
         if(id === 'interview-applications'){
             allCardSection.classList.add('hidden');
@@ -53,6 +66,20 @@ function toggleStyle(id){
             rejectedContainer.classList.remove('hidden');
         }
 
+        const availableCards = allCardSection.childElementCount;
+        const interviewCards = interviewList.length;
+        const rejectedCards = rejectedList.length;
+
+     if(id === 'all-applications') {
+        availableJobs.innerText = availableCards;
+    }
+    else if(id === 'interview-applications') {
+        availableJobs.innerText = `${interviewCards} Of ${availableCards}`;
+    }
+     else if(id === 'rejected-applications') {
+        availableJobs.innerText = `${rejectedCards} Of ${availableCards}`;
+    }
+
 }
 
 
@@ -67,22 +94,55 @@ function toggleStyle(id){
 const statusBadge = parentCard.querySelectorAll('.status-badge');
     for(let badge of statusBadge){
         badge.innerText = 'INTERVIEW';
-        badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)');
+        badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)','border-2', 'border-red-500', 'bg-red-200', 'font-bold', 'text-center', 'text-red-600');
         badge.classList.add('border-2', 'border-green-500', 'bg-green-200', 'font-bold', 'text-center', 'text-green-600');
     }
 
               if(!jobExist){
                 const cloneApplication = parentCard.cloneNode(true);
                 interviewList.push(cloneApplication);
-              
               }
-          Counter();
 
+              rejectedList = rejectedList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
+              if(jobStatus === 'rejected-applications'){
+                renderRejected();
+              }
+
+          Counter();
           renderInterview();
     }
 
+    else if(event.target.classList.contains('rejected-btn')){
+        const parentCard = event.target.parentNode.parentNode;
+          const jobTitle = parentCard.querySelector('.job-title').innerText;
 
+          const jobExist = rejectedList.find(item=> item.querySelector('.job-title').innerText === jobTitle)
+
+            const statusBadge = parentCard.querySelectorAll('.status-badge');
+            for(let badge of statusBadge){
+            badge.innerText = 'REJECTED';
+            badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)');
+            badge.classList.add('border-2', 'border-red-500', 'bg-red-200', 'font-bold', 'text-center', 'text-red-600');
+            }
+
+              if(!jobExist){
+                const cloneApplication = parentCard.cloneNode(true);
+                rejectedList.push(cloneApplication);
+              
+              }
+
+              interviewList = interviewList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
+              if(jobStatus === 'interview-applications'){
+                renderInterview();
+              }
+
+          Counter();
+
+          renderRejected();
+    }
   })
+
+
 
 
   function renderInterview(){
