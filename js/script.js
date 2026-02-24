@@ -77,6 +77,23 @@ const statusBadge = parentCard.querySelectorAll('.status-badge');
 
           renderRejected();
     }
+
+    else if(event.target.classList.contains('delet-icon')){
+        const parentCard = event.target.closest('.applications-card');
+        const jobTitle =parentCard.querySelector('.job-title').innerText;
+
+        if(jobStatus === 'interview-applications'){
+            alert('Delete This Application from Interview');
+            interviewList = interviewList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
+            renderInterview();
+        }
+
+        else if(jobStatus === 'rejected-applications'){
+            alert('Delete This Application from Rejected');
+            rejectedList = rejectedList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
+            renderRejected();
+        }
+    }
   })
 
 

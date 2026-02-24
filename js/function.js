@@ -116,4 +116,23 @@ jobStatus = id;
     
 
 
-  function 
+// function updateMainCardStatus(jobclass, status){
+
+//     const allCards = document.querySelectorAll('#all-container .applications-card');
+
+//     for(let card of allCards){
+//         if(card.document.querySelectorAll('.job-title') === jobclass){
+
+//             const badge = card.querySelector('.status-badge');
+
+//             if(status === 'interview'){
+//                 badge.innerText = 'INTERVIEW';
+//                 badge.className = 'status-badge border-2 border-green-500 bg-green-200 font-bold text-center text-green-600';
+//             }
+//             else if(status === 'rejected'){
+//                 badge.innerText = 'REJECTED';
+//                 badge.className = 'status-badge border-2 border-red-500 bg-red-200 font-bold text-center text-red-600';
+//             }
+//         }
+//     }
+// }
