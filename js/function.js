@@ -87,70 +87,6 @@ jobStatus = id;
 
 }
 
-
- mainContainer.addEventListener('click', function(event) {
-
-      if(event.target.classList.contains('interview-btn')){
-        const parentCard = event.target.parentNode.parentNode;
-          const jobTitle = parentCard.querySelector('.job-title').innerText;
-
-          const jobExist = interviewList.find(item=> item.querySelector('.job-title').innerText === jobTitle)
-        //  const rejectedCardExiest = rejectedList.find(item=> item.querySelector('.job-title').innerText === jobTitle);
-
-const statusBadge = parentCard.querySelectorAll('.status-badge');
-    for(let badge of statusBadge){
-        badge.innerText = 'INTERVIEW';
-        badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)','border-2', 'border-red-500', 'bg-red-200', 'font-bold', 'text-center', 'text-red-600');
-        badge.classList.add('border-2', 'border-green-500', 'bg-green-200', 'font-bold', 'text-center', 'text-green-600');
-    }
-
-              if(!jobExist){
-                const cloneApplication = parentCard.cloneNode(true);
-                interviewList.push(cloneApplication);
-              }
-
-              rejectedList = rejectedList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
-              if(jobStatus === 'rejected-applications'){
-                renderRejected();
-              }
-
-          Counter();
-          renderInterview();
-    }
-
-    else if(event.target.classList.contains('rejected-btn')){
-        const parentCard = event.target.parentNode.parentNode;
-          const jobTitle = parentCard.querySelector('.job-title').innerText;
-
-          const jobExist = rejectedList.find(item=> item.querySelector('.job-title').innerText === jobTitle)
-
-            const statusBadge = parentCard.querySelectorAll('.status-badge');
-            for(let badge of statusBadge){
-            badge.innerText = 'REJECTED';
-            badge.classList.remove('bg-[#eef4ff]', 'text-(--primary-text-color)');
-            badge.classList.add('border-2', 'border-red-500', 'bg-red-200', 'font-bold', 'text-center', 'text-red-600');
-            }
-
-              if(!jobExist){
-                const cloneApplication = parentCard.cloneNode(true);
-                rejectedList.push(cloneApplication);
-              
-              }
-
-              interviewList = interviewList.filter(item=> item.querySelector('.job-title').innerText !== jobTitle);
-              if(jobStatus === 'interview-applications'){
-                renderInterview();
-              }
-
-          Counter();
-
-          renderRejected();
-    }
-  })
-
-
-
-
   function renderInterview(){
     interviewContainer.innerHTML = '';
 
@@ -178,3 +114,6 @@ const statusBadge = parentCard.querySelectorAll('.status-badge');
     }
   }
     
+
+
+  function 
