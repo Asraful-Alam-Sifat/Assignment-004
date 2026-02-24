@@ -1,6 +1,6 @@
 let interviewList =[];
 let rejectedList = [];
-let jobStatus = 'applid';
+let jobStatus = 'all';
 
 let totalCount = document.getElementById('total-count');
 let interviewCount = document.getElementById('interview-count');
@@ -38,7 +38,7 @@ function noJobsMessage(id, containerId){
      
 }
 
-// noJobsMessage('no-jobs');
+
 
 function toggleStyle(id){
         const btns = ['all-applications', 'interview-applications', 'rejected-applications'];
@@ -55,36 +55,34 @@ function toggleStyle(id){
         }
 
 jobStatus = id;
-// noJobsMessage('no-jobs', id);
-// noJobsMessage('no-jobs', id);
-// noJobsMessage('no-jobs', id);
 
         if(id === 'interview-applications'){
             allCardSection.classList.add('hidden');
             interviewContainer.classList.remove('hidden');
             rejectedContainer.classList.add('hidden');
-        }else if(id === 'all-applications'){
+            noJobsMessage('no-jobs', interviewContainer);
+        }
+        else if(id === 'all-applications'){
             allCardSection.classList.remove('hidden');
             interviewContainer.classList.add('hidden');
             rejectedContainer.classList.add('hidden');
-        }else if(id === 'rejected-applications'){
+            noJobsMessage('no-jobs', allCardSection);
+        }
+        else if(id === 'rejected-applications'){
             allCardSection.classList.add('hidden');
             interviewContainer.classList.add('hidden');
             rejectedContainer.classList.remove('hidden');
-        }
-
-        const availableCards = allCardSection.childElementCount;
-        const interviewCards = interviewList.length;
-        const rejectedCards = rejectedList.length;
+            noJobsMessage('no-jobs', rejectedContainer);
+        }        
 
      if(id === 'all-applications') {
-        availableJobs.innerText = availableCards;
+        availableJobs.innerText = allCardSection.childElementCount;
     }
     else if(id === 'interview-applications') {
-        availableJobs.innerText = `${interviewCards} Of ${availableCards}`;
+        availableJobs.innerText = `${interviewList.length} Of ${allCardSection.childElementCount}`;
     }
      else if(id === 'rejected-applications') {
-        availableJobs.innerText = `${rejectedCards} Of ${availableCards}`;
+        availableJobs.innerText = `${rejectedList.length} Of ${allCardSection.childElementCount}`;
     }
 
 }
@@ -97,6 +95,7 @@ jobStatus = id;
           const jobTitle = parentCard.querySelector('.job-title').innerText;
 
           const jobExist = interviewList.find(item=> item.querySelector('.job-title').innerText === jobTitle)
+        //  const rejectedCardExiest = rejectedList.find(item=> item.querySelector('.job-title').innerText === jobTitle);
 
 const statusBadge = parentCard.querySelectorAll('.status-badge');
     for(let badge of statusBadge){
@@ -159,6 +158,10 @@ const statusBadge = parentCard.querySelectorAll('.status-badge');
      
         interviewContainer.appendChild(interview);
     }
+
+    if(jobStatus === 'interview-applications'){
+        noJobsMessage('no-jobs', interviewContainer);
+    }
   }
 
 
@@ -168,6 +171,10 @@ const statusBadge = parentCard.querySelectorAll('.status-badge');
     for(let rejected of rejectedList){
      
         rejectedContainer.appendChild(rejected);
+    }
+
+    if(jobStatus === 'rejected-applications'){
+        noJobsMessage('no-jobs', rejectedContainer);
     }
   }
     
