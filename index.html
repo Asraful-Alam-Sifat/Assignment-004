@@ -53,7 +53,7 @@
     <main class=" max-w-6xl mx-auto p-3">
 
         <!-- NO Jobs -->
-     <section id="no-jobs" class=" h-[400px] mt-10 flex flex-col justify-center items-center gap-4 bg-base-100 rounded-lg border-2 border-gray-100 ">
+     <section id="no-jobs" class=" h-[400px] mt-10 flex flex-col justify-center items-center gap-4 bg-base-100 rounded-lg border-2 border-gray-100 hidden">
             <img class="max-w-32" src="img/docs.png" alt="document-png">
             <h1 class="font-semibold text-2xl text-(--primary-text-color)">No jobs available</h1>
             <p class="font-medium text-base text-(--secondary-text-color)">Check back soon for new job opportunities</p>
@@ -68,11 +68,11 @@
         </div>
 
         <div class="job-navigation mb-5 ">
-                <button onclick="toggleStyle('all-applications')" id="all-applications" class="btn btn-sm btn-primary rounded-md px-10 py-4 font-semibold text-xs mr-3">All</button>
+                <button onclick="toggleStyle('all-applications'), noJobsMessage('no-jobs', allCardSection)" id="all-applications" class="btn btn-sm btn-primary rounded-md px-10 py-4 font-semibold text-xs mr-3">All</button>
 
-                <button onclick="toggleStyle('interview-applications')" id="interview-applications" class="btn btn-sm btn-outline btn-primary bg-base-100 text-(--secondary-text-color) border-2 border-gray-200 rounded-md px-7 py-4 font-semibold text-xs mr-3">Interview</button>
+                <button onclick="toggleStyle('interview-applications'), noJobsMessage('no-jobs', interviewContainer)" id="interview-applications" class="btn btn-sm btn-outline btn-primary bg-base-100 text-(--secondary-text-color) border-2 border-gray-200 rounded-md px-7 py-4 font-semibold text-xs mr-3">Interview</button>
 
-                <button onclick="toggleStyle('rejected-applications')" id="rejected-applications" class="btn btn-sm btn-outline btn-primary bg-base-100 text-(--secondary-text-color) border-2 border-gray-200 rounded-md px-7 py-4 font-semibold text-xs mr-3">Rejected</button>
+                <button onclick="toggleStyle('rejected-applications'), noJobsMessage('no-jobs', rejectedContainer)" id="rejected-applications" class="btn btn-sm btn-outline btn-primary bg-base-100 text-(--secondary-text-color) border-2 border-gray-200 rounded-md px-7 py-4 font-semibold text-xs mr-3">Rejected</button>
         </div>
             </div>
             <!-- All Applications -->
